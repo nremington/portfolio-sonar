@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nikki Remington — Director, Revenue Marketing & Customer Growth</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0F1E35;
+    --navy-mid: #1B2F4A;
+    --navy-light: #243D5C;
+    --accent: #4A9EDB;
+    --accent-warm: #C8853A;
+    --cream: #F8F4EE;
+    --white: #FFFFFF;
+    --gray-100: #F2F0EB;
+    --gray-200: #E4E0D8;
+    --gray-400: #9A9590;
+    --gray-600: #5A5650;
+    --green: #2E8B5A;
+    --green-light: #EAF5EE;
+    --text: #1A1A1A;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 15px;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--navy);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px; height: 56px;
+  }
+  .nav-brand { font-family: var(--serif); font-size: 17px; color: var(--white); letter-spacing: 0.01em; }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--white); }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    padding: 80px 40px 72px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -60px; right: -80px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(74,158,219,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero-tag {
+    display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--accent); border: 1px solid rgba(74,158,219,0.3);
+    padding: 5px 14px; border-radius: 20px; margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-family: var(--serif); font-size: clamp(36px, 5vw, 56px);
+    color: var(--white); line-height: 1.1; margin-bottom: 8px;
+    font-weight: 400;
+  }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero-role {
+    font-size: 16px; color: rgba(255,255,255,0.55); font-weight: 300;
+    letter-spacing: 0.03em; margin-bottom: 28px;
+  }
+  .hero-summary {
+    font-size: 17px; color: rgba(255,255,255,0.8); line-height: 1.7;
+    max-width: 640px; font-weight: 300; margin-bottom: 36px;
+  }
+  .hero-stats {
+    display: flex; gap: 36px; flex-wrap: wrap;
+  }
+  .stat { }
+  .stat-num { font-family: var(--serif); font-size: 32px; color: var(--white); line-height: 1; }
+  .stat-label { font-size: 12px; color: rgba(255,255,255,0.45); font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; margin-top: 3px; }
+
+  /* ── SECTION WRAPPER ── */
+  .section { padding: 64px 40px; max-width: 960px; margin: 0 auto; }
+  .section-alt { background: var(--white); }
+  .section-dark { background: var(--navy); }
+  .section-alt .section, .section-dark .section { max-width: 960px; }
+
+  .section-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: var(--serif); font-size: clamp(26px, 3.5vw, 36px);
+    font-weight: 400; color: var(--navy); line-height: 1.15; margin-bottom: 10px;
+  }
+  .section-dark .section-title { color: var(--white); }
+  .section-sub {
+    font-size: 15px; color: var(--gray-600); line-height: 1.65; max-width: 580px;
+    margin-bottom: 40px;
+  }
+  .section-dark .section-sub { color: rgba(255,255,255,0.55); }
+
+  /* ── MATCH GRID ── */
+  .match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .match-card {
+    background: var(--white); border: 1px solid var(--gray-200);
+    border-radius: 12px; padding: 20px 22px;
+    border-top: 3px solid var(--green);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .match-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.07); }
+  .match-card-cat {
+    font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 8px;
+  }
+  .match-card-req { font-size: 13.5px; font-weight: 500; color: var(--navy); margin-bottom: 10px; line-height: 1.4; }
+  .match-card-bring { font-size: 13px; color: var(--gray-600); line-height: 1.55; }
+  .match-badge {
+    display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 0.05em;
+    text-transform: uppercase; padding: 2px 9px; border-radius: 10px; margin-top: 10px;
+    background: var(--green-light); color: var(--green);
+  }
+
+  /* ── AI SECTION ── */
+  .ai-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+  .ai-card {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px; padding: 22px 24px;
+  }
+  .ai-card-icon { 
+    font-size: 20px; 
+    margin-bottom: 12px; 
+    width: 40px; 
+    height: 40px; 
+    border-radius: 10px; 
+    background: rgba(255,255,255,0.12); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+  .ai-card-title { font-size: 14px; font-weight: 600; color: var(--white); margin-bottom: 8px; }
+  .ai-card-text { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.6; }
+  .ai-tools {
+    display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px;
+  }
+  .tool-pill {
+    font-size: 11px; font-weight: 500; padding: 4px 12px; border-radius: 20px;
+    background: rgba(74,158,219,0.15); color: var(--accent);
+    border: 1px solid rgba(74,158,219,0.25);
+  }
+
+  /* ── SONAR SECTION ── */
+  .sonar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .sonar-col-title {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 8px 14px; border-radius: 8px 8px 0 0; margin-bottom: 0;
+  }
+  .sonar-col-title.their { background: var(--navy); color: var(--white); }
+  .sonar-col-title.mine { background: var(--green); color: var(--white); }
+  .sonar-col-body {
+    border: 1px solid var(--gray-200); border-radius: 0 0 12px 12px;
+    padding: 16px 18px; background: var(--white);
+  }
+  .sonar-item { display: flex; gap: 10px; align-items: flex-start; padding: 8px 0; border-bottom: 1px solid var(--gray-100); }
+  .sonar-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .sonar-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 7px; }
+  .sonar-item-text { font-size: 13px; color: var(--gray-600); line-height: 1.5; }
+  .partner-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+  .partner-pill {
+    font-size: 11px; font-weight: 500; padding: 4px 11px; border-radius: 20px;
+    background: var(--gray-100); color: var(--navy);
+    border: 1px solid var(--gray-200);
+  }
+  .partner-pill.active { background: #E6F1FB; color: #185FA5; border-color: #B5D4F4; }
+
+  /* ── OUTCOMES ── */
+  .outcomes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .outcome-card {
+    background: var(--white); border-radius: 12px; padding: 22px 20px;
+    border: 1px solid var(--gray-200);
+  }
+  .outcome-num {
+    font-family: var(--serif); font-size: 36px; color: var(--navy);
+    line-height: 1; margin-bottom: 6px;
+  }
+  .outcome-label { font-size: 12px; font-weight: 500; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+  .outcome-desc { font-size: 13px; color: var(--gray-600); line-height: 1.5; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy); padding: 48px 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 20px;
+  }
+  .footer-left { }
+  .footer-name { font-family: var(--serif); font-size: 22px; color: var(--white); margin-bottom: 4px; }
+  .footer-title { font-size: 13px; color: rgba(255,255,255,0.45); }
+  .footer-contact { text-align: right; }
+  .footer-contact a { display: block; font-size: 14px; color: var(--accent); text-decoration: none; margin-bottom: 4px; }
+  .footer-note { font-size: 11px; color: rgba(255,255,255,0.25); margin-top: 12px; font-style: italic; }
+
+  /* ── BUILT WITH AI BADGE ── */
+  .ai-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(74,158,219,0.12); border: 1px solid rgba(74,158,219,0.25);
+    border-radius: 24px; padding: 7px 16px; margin-bottom: 40px;
+    font-size: 12px; color: var(--accent); font-weight: 500;
+  }
+  .ai-badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 680px) {
+    nav { padding: 0 20px; }
+    .hero { padding: 48px 20px 56px; }
+    .section { padding: 48px 20px; }
+    .match-grid, .ai-grid, .sonar-grid, .outcomes-grid { grid-template-columns: 1fr; }
+    footer { padding: 40px 20px; flex-direction: column; }
+    .footer-contact { text-align: left; }
+  }
+
+  /* ── FADE IN ── */
+  .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+  .fade-in.visible { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-brand">Nikki Remington</span>
+  <ul class="nav-links">
+    <li><a href="#match">Match</a></li>
+    <li><a href="#ai">AI Fluency</a></li>
+    <li><a href="#sonar">Role Fit</a></li>
+    <li><a href="#outcomes">Results</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Director, Revenue Marketing & Customer Growth — Sonar</div>
+    <h1>Marketing isn't a function.<br>It's a <em>growth engine.</em></h1>
+    <p class="hero-role">Here's what that looks like for Sonar.</p>
+    <p class="hero-summary">
+      I focus on one thing: marketing that drives real business outcomes. I've built functions from the ground up and scaled programs already in motion, and I bring the same hands-on energy to both.<br><br>This portfolio was built for Sonar to show how my experience directly aligns with your goals and how I'd contribute from day one.
+    </p>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">18+</div>
+        <div class="stat-label">Years in B2B SaaS,<br>software & services</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">$15K→$1.5M</div>
+        <div class="stat-label">Monthly budget range<br>managed across career</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">1→15+</div>
+        <div class="stat-label">Team size managed<br>across career</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">25/25</div>
+        <div class="stat-label">JD requirements<br>matched — no gaps</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MATCH SECTION -->
+<div id="summary">
+<div class="section fade-in" style="max-width: 960px; margin: 0 auto; padding: 64px 40px 48px;">
+  <div class="section-label">About me</div>
+  <p style="font-size: 19px; color: var(--navy); line-height: 1.75; max-width: 720px; font-weight: 300;">My marketing background spans the full funnel — paid, owned, earned, and everything in between. I lead as a player-coach: setting the vision, staying in the work, and building the systems that make teams succeed. Hands-on, invested, and focused on what actually moves the business forward. That's how I've driven results at every stage of my career — and it's exactly how I'd show up for Sonar.</p>
+</div>
+</div>
+
+<div id="match" class="section-alt">
+<div class="section fade-in">
+  <div class="section-label">Requirements match</div>
+  <h2 class="section-title">Every requirement. My experience.</h2>
+  <p class="section-sub">In building this customized portfolio, I've mapped each requirement in the job description to my experience. Each card below connects my expertise directly to what this role requires and what I'd bring to the table.</p>
+
+  <div class="match-grid">
+    <div class="match-card">
+      <div class="match-card-cat">Demand Gen & Pipeline</div>
+      <div class="match-card-req">Quarterly campaign plans tied to pipeline goals</div>
+      <div class="match-card-bring">Quarterly planning, for me, starts with a conversation about revenue — what we need to hit, what's realistic, and what it will take to get there. Everything else — channels, budget allocation, content calendar — flows from that. It's the same process whether the budget is $15K or $15M.</div>
+      <span class="match-badge">Strong Match</span>
+    </div>
+    <div class="match-card">
+      <div class="match-card-cat">Demand Gen & Pipeline</div>
+      <div class="match-card-req">Full-funnel approach: paid, owned, earned, outbound</div>
+      <div class="match-card-bring">I've always approached channel strategy as a mix question, not a checklist. Paid, owned, and earned each have a role — and that role shifts depending on the budget, the goal, and where the audience is. Clear KPIs set before launch mean every tweak and adjustment is grounded in what's actually moving the needle.</div>
+      <span class="match-badge">Strong Match</span>
+    </div>
+    <div class="match-card">
+      <div class="match-card-cat">Demand Gen & Pipeline</div>
+      <div class="match-card-req">Performance marketing tied to revenue</div>
+      <div class="match-card-bring">I've built attribution models from scratch at multiple companies and presented pipeline dashboards to boards. The goal has always been the same: give leadership a clear line from marketing activity to sales.</div>
+      <span class="match-badge">Strong Match</span>
+    </div>
+    <div class="match-card">
+      <div class="match-card-cat">Customer Marketing</div>
+      <div class="match-card-req">End-to-end lifecycle: onboarding, retention, expansion, advocacy</div>
+      <div class="match-card-bring">I've built lifecycle programs across SaaS, software, and services — from trial-to-paid conversion through long-term retention. I've always built the sales enablement layer alongside the marketing programs, because keeping and growing a customer is just as important as winning one.</div>
+      <span class="match-badge">Strong Match</span>
+    </div>
+    <div class="match-card">
+      <div class="match-card-cat">Customer Marketing</div>
+      <div class="match-card-req">Partner co-marketing: joint campaigns, co-branded content, shared events</div>
+      <div class="match-card-bring">I've run joint co-branded webinars with partners, produced co-branded case studies and gated content as part of partner programs, and rebuilt an underperforming partner program into a reliable pipeline channel.</div>
+      <span class="match-badge">Strong Match</span>
+    </div>
+    <div class="match-card">
+      <div class="match-card-cat">Webinars & Events</div>
+      <div class="match-card-req">Webinar engine: end-to-end production</div>
+      <div class="match-card-bring">I've created and produced webinar programs across product launches, customer education, client case studies, and timely market topics. From concept to close — promotion, speaker prep, run-of-show, creative, post-event nurture, and the sales enablement content.</div>
+      <span class="match-badge">Strong Match</span>
+    </div>
+    <div class="match-card">
+      <div class="match-card-cat">HubSpot Ownership</div>
+      <div class="match-card-req">HubSpot: built, owned, and operated</div>
+      <div class="match-card-bring">I've led HubSpot implementation from scratch — working with implementation partners, building out the workflow and sequence architecture, deploying Marketing and Content Hub, and collaborating with sales on Sales Hub adoption and handoff configuration.</div>
+      <span class="match-badge">Strong Match</span>
+    </div>
+    <div class="match-card">
+      <div class="match-card-cat">Team Leadership</div>
+      <div class="match-card-req">Leadership: player-coach, mentor, systems-builder</div>
+      <div class="match-card-bring">My leadership approach depends on what the moment calls for — player-coach, mentor, or systems-builder. I invest in developing people across the board: their confidence, their craft, and how they think about the business. With AI, I don't lead from ahead. We figure it out together, and I've found that's what makes it real.</div>
+      <span class="match-badge">Strong Match</span>
+    </div>
+  </div>
+
+  <div style="margin-top: 32px;">
+    <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px;">Core qualifications</div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 10px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 10px; padding: 12px 14px;">
+        <div style="width: 20px; height: 20px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="color: white; font-size: 12px; font-weight: 700;">✓</span></div>
+        <span style="font-size: 13px; color: var(--navy); font-weight: 500;">7+ years in B2B marketing</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 10px; padding: 12px 14px;">
+        <div style="width: 20px; height: 20px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="color: white; font-size: 12px; font-weight: 700;">✓</span></div>
+        <span style="font-size: 13px; color: var(--navy); font-weight: 500;">Direct leadership experience</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 10px; padding: 12px 14px;">
+        <div style="width: 20px; height: 20px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="color: white; font-size: 12px; font-weight: 700;">✓</span></div>
+        <span style="font-size: 13px; color: var(--navy); font-weight: 500;">Proven demand gen programs</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 10px; padding: 12px 14px;">
+        <div style="width: 20px; height: 20px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="color: white; font-size: 12px; font-weight: 700;">✓</span></div>
+        <span style="font-size: 13px; color: var(--navy); font-weight: 500;">HubSpot fluency</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 10px; padding: 12px 14px;">
+        <div style="width: 20px; height: 20px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="color: white; font-size: 12px; font-weight: 700;">✓</span></div>
+        <span style="font-size: 13px; color: var(--navy); font-weight: 500;">B2B SaaS experience</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 10px; padding: 12px 14px;">
+        <div style="width: 20px; height: 20px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="color: white; font-size: 12px; font-weight: 700;">✓</span></div>
+        <span style="font-size: 13px; color: var(--navy); font-weight: 500;">Built for lean, fast-moving teams</span>
+      </div>
+    </div>
+  <div style="margin-top: 28px;">
+    <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px;">Marketing qualifications</div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+
+      <div>
+        <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy); margin-bottom: 10px; padding-bottom: 6px; border-bottom: 2px solid var(--navy);">Paid</div>
+        <div style="display: flex; flex-direction: column; gap: 7px;">
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 18px; height: 18px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="color: white; font-size: 11px; font-weight: 700;">✓</span></div><span style="font-size: 13px; color: var(--gray-600);">Google Ads</span></div>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 18px; height: 18px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="color: white; font-size: 11px; font-weight: 700;">✓</span></div><span style="font-size: 13px; color: var(--gray-600);">LinkedIn Ads</span></div>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 18px; height: 18px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="color: white; font-size: 11px; font-weight: 700;">✓</span></div><span style="font-size: 13px; color: var(--gray-600);">Programmatic</span></div>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 18px; height: 18px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="color: white; font-size: 11px; font-weight: 700;">✓</span></div><span style="font-size: 13px; color: var(--gray-600);">Paid Social</span></div>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 18px; height: 18px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="color: white; font-size: 11px; font-weight: 700;">✓</span></div><span style="font-size: 13px; color: var(--gray-600);">ABM</span></div>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 18px; height: 18px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="color: white; font-size: 11px; font-weight: 700;">✓</span></div><span style="font-size: 13px; color: var(--gray-600);">Retargeting</span></div>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy); margin-bottom: 10px; padding-bottom: 6px; border-bottom: 2px solid var(--navy);">Owned</div>
+        <div style="display: flex; flex-direction: column; gap: 7px;">
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 18px; height: 18px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="color: white; font-size: 11px; font-weight: 700;">✓</span></div><span style="font-size: 13px; color: var(--gray-600);">Email Marketing</span></div>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 18px; height: 18px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="color: white; font-size: 11px; font-weight: 700;">✓</span></div><span style="font-size: 13px; color: var(--gray-600);">Marketing Automation</span></div>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 18px; height: 18px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="color: white; font-size: 11px; font-weight: 700;">✓</span></div><span style="font-size: 13px; color: var(--gray-600);">Content Marketing</span></div>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 18px; height: 18px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="color: white; font-size: 11px; font-weight: 700;">✓</span></div><span style="font-size: 13px; color: var(--gray-600);">SEO</span></div>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 18px; height: 18px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="color: white; font-size: 11px; font-weight: 700;">✓</span></div><span style="font-size: 13px; color: var(--gray-600);">Website / CMS</span></div>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 18px; height: 18px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="color: white; font-size: 11px; font-weight: 700;">✓</span></div><span style="font-size: 13px; color: var(--gray-600);">Webinars</span></div>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy); margin-bottom: 10px; padding-bottom: 6px; border-bottom: 2px solid var(--navy);">Earned</div>
+        <div style="display: flex; flex-direction: column; gap: 7px;">
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 18px; height: 18px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="color: white; font-size: 11px; font-weight: 700;">✓</span></div><span style="font-size: 13px; color: var(--gray-600);">PR & Media</span></div>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 18px; height: 18px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="color: white; font-size: 11px; font-weight: 700;">✓</span></div><span style="font-size: 13px; color: var(--gray-600);">Thought Leadership</span></div>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 18px; height: 18px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="color: white; font-size: 11px; font-weight: 700;">✓</span></div><span style="font-size: 13px; color: var(--gray-600);">Partner Programs</span></div>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 18px; height: 18px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="color: white; font-size: 11px; font-weight: 700;">✓</span></div><span style="font-size: 13px; color: var(--gray-600);">Affiliate & Reseller</span></div>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 18px; height: 18px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="color: white; font-size: 11px; font-weight: 700;">✓</span></div><span style="font-size: 13px; color: var(--gray-600);">Organic Social</span></div>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 18px; height: 18px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="color: white; font-size: 11px; font-weight: 700;">✓</span></div><span style="font-size: 13px; color: var(--gray-600);">Case Studies</span></div>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy); margin-bottom: 10px; padding-bottom: 6px; border-bottom: 2px solid var(--accent-warm);">Sales Enablement</div>
+        <div style="display: flex; flex-direction: column; gap: 7px;">
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 18px; height: 18px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="color: white; font-size: 11px; font-weight: 700;">✓</span></div><span style="font-size: 13px; color: var(--gray-600);">Follow-up Content</span></div>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 18px; height: 18px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="color: white; font-size: 11px; font-weight: 700;">✓</span></div><span style="font-size: 13px; color: var(--gray-600);">ABM Support</span></div>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 18px; height: 18px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="color: white; font-size: 11px; font-weight: 700;">✓</span></div><span style="font-size: 13px; color: var(--gray-600);">Playbooks</span></div>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 18px; height: 18px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="color: white; font-size: 11px; font-weight: 700;">✓</span></div><span style="font-size: 13px; color: var(--gray-600);">Case Studies</span></div>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 18px; height: 18px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="color: white; font-size: 11px; font-weight: 700;">✓</span></div><span style="font-size: 13px; color: var(--gray-600);">Sales Tools</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div style="margin-top: 28px;">
+    <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px;">Tools & platforms</div>
+    <div style="font-size: 13px; color: var(--gray-600); margin-bottom: 14px;">Working knowledge and experience in all required tools.</div>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px;">
+      <span style="font-size: 12px; font-weight: 500; padding: 6px 14px; border-radius: 20px; background: var(--navy); color: var(--white);">HubSpot</span>
+      <span style="font-size: 12px; font-weight: 500; padding: 6px 14px; border-radius: 20px; background: var(--navy); color: var(--white);">Claude</span>
+      <span style="font-size: 12px; font-weight: 500; padding: 6px 14px; border-radius: 20px; background: var(--navy); color: var(--white);">ChatGPT</span>
+      <span style="font-size: 12px; font-weight: 500; padding: 6px 14px; border-radius: 20px; background: var(--navy); color: var(--white);">Google Ads</span>
+      <span style="font-size: 12px; font-weight: 500; padding: 6px 14px; border-radius: 20px; background: var(--navy); color: var(--white);">LinkedIn Ads</span>
+      <span style="font-size: 12px; font-weight: 500; padding: 6px 14px; border-radius: 20px; background: var(--navy); color: var(--white);">Programmatic</span>
+      <span style="font-size: 12px; font-weight: 500; padding: 6px 14px; border-radius: 20px; background: var(--navy); color: var(--white);">Zoom Webinars</span>
+      <span style="font-size: 12px; font-weight: 500; padding: 6px 14px; border-radius: 20px; background: var(--navy); color: var(--white);">GoToWebinar</span>
+      <span style="font-size: 12px; font-weight: 500; padding: 6px 14px; border-radius: 20px; background: var(--navy); color: var(--white);">GA4</span>
+      <span style="font-size: 12px; font-weight: 500; padding: 6px 14px; border-radius: 20px; background: var(--navy); color: var(--white);">Looker Studio</span>
+      <span style="font-size: 12px; font-weight: 500; padding: 6px 14px; border-radius: 20px; background: var(--navy); color: var(--white);">Semrush</span>
+      <span style="font-size: 12px; font-weight: 500; padding: 6px 14px; border-radius: 20px; background: var(--navy); color: var(--white);">Salesforce</span>
+      <span style="font-size: 12px; font-weight: 500; padding: 6px 14px; border-radius: 20px; background: var(--navy); color: var(--white);">Asana</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 10px; background: var(--gray-100); border: 1px solid var(--gray-200); border-radius: 10px; padding: 11px 14px; max-width: 520px;">
+      <div style="width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex-shrink: 0;"></div>
+      <span style="font-size: 12px; color: var(--gray-600); font-style: italic;">Sonar's internal AI agents: I'm ready to learn from day one!</span>
+    </div>
+  </div>
+<div id="ai" class="section-dark">
+<div class="section fade-in">
+  <div class="section-label">AI Fluency</div>
+  <h2 class="section-title" style="color:white;">AI doesn't replace the thinking.<br>It makes more of it possible.</h2>
+
+
+  <div class="ai-grid">
+    <div class="ai-card">
+      <div class="ai-card-icon">&#9998;</div>
+      <div class="ai-card-title">Writing prompts that actually work</div>
+      <div class="ai-card-text">I've built reusable prompt templates for campaign briefs, content calendars, social media, SEO strategies, and channel plan reviews. Designed for reuse — consistent output, on-brand every time.</div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-card-icon">&#9881;</div>
+      <div class="ai-card-title">Speed from AI. Quality from experience.</div>
+      <div class="ai-card-text">AI moves the work forward faster. The strategy, the nuance, the final edit — that's still human work. I've built workflows that use both, in the right order.</div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-card-icon">&#128101;</div>
+      <div class="ai-card-title">Helping teams actually use AI</div>
+      <div class="ai-card-text">I've led AI adoption with in-house teams and clients. The shift is in how you think about the work, not just the tools. Finding where AI fits naturally — and building from there — is how I approach it. The technology is moving fast. We're all figuring it out together, and that's what makes it exciting.</div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-card-icon">&#128200;</div>
+      <div class="ai-card-title">AI across the mix — from strategy to execution</div>
+      <div class="ai-card-text">AI is part of how I approach content from the start — strategy, briefs, copy, social, campaign assets. It speeds up execution so more time goes into strategy and ideas.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- OUTCOMES SECTION -->
+<div id="outcomes" class="section-alt">
+<div class="section fade-in">
+  <div class="section-label">Career outcomes</div>
+  <h2 class="section-title">My work, in numbers.</h2>
+  <p class="section-sub">A highlight of results across my career. These are the numbers I'm most proud of — each one tied to revenue, pipeline, or a real business outcome.</p>
+
+  <div class="outcomes-grid">
+    <div class="outcome-card">
+      <div class="outcome-num">$6M+</div>
+      <div class="outcome-label">Net-new revenue</div>
+      <div class="outcome-desc">Generated in one Director role, building from zero, on a $15K/month budget. Six months in.</div>
+    </div>
+    <div class="outcome-card">
+      <div class="outcome-num">125%</div>
+      <div class="outcome-label">MQL growth</div>
+      <div class="outcome-desc">Alongside the $6M revenue number. Demand gen that produced qualified pipeline, not just a bigger list.</div>
+    </div>
+    <div class="outcome-card">
+      <div class="outcome-num">$15M+</div>
+      <div class="outcome-label">Media managed</div>
+      <div class="outcome-desc">Annual client media budget managed across paid search, social, programmatic, ABM, and events.</div>
+    </div>
+    <div class="outcome-card">
+      <div class="outcome-num">$1.7M</div>
+      <div class="outcome-label">Paid media scaled</div>
+      <div class="outcome-desc">Monthly paid media scaled from $500K to $1.7M in a multi-brand B2B SaaS portfolio — while sustaining ROI the whole way.</div>
+    </div>
+    <div class="outcome-card">
+      <div class="outcome-num">54%</div>
+      <div class="outcome-label">Social growth YoY</div>
+      <div class="outcome-desc">Organic social growth, alongside 40% YoY search improvement. Earned channels running alongside paid, not waiting for paid to slow down.</div>
+    </div>
+    <div class="outcome-card">
+      <div class="outcome-num">37%</div>
+      <div class="outcome-label">Organic improvement</div>
+      <div class="outcome-desc">Year-over-year organic performance improvement through technical SEO and audience segmentation across a B2B SaaS portfolio.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- FOOTER / CONTACT -->
+<div id="sonar">
+<div class="section fade-in">
+  <div class="section-label">Role-specific fit</div>
+  <h2 class="section-title">Different industry.<br>Similar buyer.</h2>
+  <p style="font-size: 15px; color: var(--gray-600); line-height: 1.8; max-width: 720px; margin-bottom: 20px;">My career has been built around marketing technical products to technical buyers: managed hosting, infrastructure SaaS, cybersecurity, and B2B software across multiple verticals. These are audiences who don't respond to hype. They respond to credibility, clarity, and proof.</p>
+  <p style="font-size: 15px; color: var(--gray-600); line-height: 1.8; max-width: 720px;">Although I haven't marketed directly to ISP operators, I know that buyer. At Liquid Web, the audience was technical operators running infrastructure businesses, people who cut through marketing noise fast and care about whether something actually solves their problem. That experience extended into compliance-heavy environments too: HIPAA, SOC, and data center security, where credibility and proof aren't just nice to have, they're the whole conversation. My work in the cybersecurity vertical reinforced the same instinct. That's the kind of marketing I've always built.</p>
+</div>
+</div>
+
+<div style="background: var(--cream); padding: 48px 40px; text-align: center;">
+  <p style="font-family: var(--serif); font-size: 24px; color: var(--navy); font-style: italic; max-width: 560px; margin: 0 auto; line-height: 1.6;">I'd love the opportunity to bring this to Sonar and be part of what you're building.</p>
+</div>
+
+<div id="contact">
+<footer>
+  <div class="footer-left">
+    <div class="footer-name">Nikki Remington</div>
+    <div class="footer-title">B2B Marketing Director — Revenue, Growth & Strategy</div>
+  </div>
+  <div class="footer-contact">
+    <a href="mailto:nikkiremington@gmail.com">nikkiremington@gmail.com</a>
+    <a href="tel:5178028290">(517) 802-8290</a>
+    <a href="https://www.linkedin.com/in/nikkiremington/" target="_blank">linkedin.com/in/nikkiremington</a>
+    <a href="https://nikkiremington.wixsite.com/marketing" target="_blank">nikkiremington.wixsite.com/marketing</a>
+  </div>
+</footer>
+</div>
+
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
